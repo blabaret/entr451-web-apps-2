@@ -1,5 +1,5 @@
 
-<% if @username !=nil %>
+<% if @username %>
 <h1>Roll the dice, <%= @username %></h1>
 <p>
   <img src="/images/dice/<%= @die1 %>.svg">
@@ -11,9 +11,10 @@
 <p>
   <a href="/dice?username=<%= @username %>">Roll Again</a>
 </p>
+
 <% else %>
   <h1>What is your name?</h1>
-  <form>
+  <form action=/dice>
     <input type="text" name="username">
     <button>Let's play!</button>
   </form>
